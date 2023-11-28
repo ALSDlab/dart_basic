@@ -60,5 +60,6 @@ void main(){
  }else {
   bestplayer = 1;
  }
+
  print("가장 많은 Clap을 출력한 플레이어: Player $bestplayer");
 }

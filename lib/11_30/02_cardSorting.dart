@@ -2,35 +2,24 @@ import 'dart:io';
 import 'package:trotter/trotter.dart';
 
 void main() {
-  Map<int, int> map = {};
+  List<int> cardList = [];
 
   String? fourNum = stdin.readLineSync();
   List<String> lst = fourNum!.split(' ');
   for (int i = 0; i < lst.length; i++) {
     int eachNum = int.parse(lst[i]);
-    map[i] = eachNum;
+    cardList.add(eachNum);
   }
 
+  List<int> idx = [0,1,2,3];
+  final p = Permutations(4, idx);
+
   int maxNum = 0;
-  Map<int, String> cardMap = {1:cardList[0], "Jane":25};
-  final p = Combinations(4, idx);
-  print(p);
-
-
-  // for (final v in p()) {
-  //   int? a = v[0];
-  //   int? b = v[1];
-  //   int? c = v[2];
-  //   int? d = v[3];
-  //   int? num1 = (10*cardList[(a)] + cardList[b]);
-  //
-  //   }
-  //   int a = 10*v[0]+v[1];
-  //   int b = 10*v[2]+v[3];
-  //   int c = a + b;
-  //   if (c>maxNum){
-  //     maxNum = c;
-  //   }
-  // }
-  // print(maxNum);
+  for (final v in p()) {
+    int sumNum = (10*cardList[v[0]] + cardList[v[1]]) + (10*cardList[v[2]] + cardList[v[3]]);
+    if (sumNum>maxNum){
+      maxNum = sumNum;
+    }
+  }
+  print(maxNum);
 }

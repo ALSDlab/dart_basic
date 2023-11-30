@@ -5,6 +5,14 @@ void main(){
   final hero = Hero('슈퍼맨', 10);
   final cleric = Cleric('성직자',50, 10);
 
+  cleric.selfAid();
+  cleric.selfAid();
+  cleric.selfAid();
+  cleric.pray(2);
+  cleric.pray(3);
+  cleric.pray(1);
+  cleric.pray(3);
+
 }
 
 

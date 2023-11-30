@@ -6,4 +6,10 @@ class Cleric{
   final maxMp = 10;
 
   Cleric(this.name, this.hp, this.mp);
+
+  void selfAid(){
+    mp -= 5;
+    hp = maxHp;
+  }
+
 }

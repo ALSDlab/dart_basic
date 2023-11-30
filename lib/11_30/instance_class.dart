@@ -1,7 +1,9 @@
+import 'Cleric.dart';
 import 'hero.dart';
 
 void main(){
   final hero = Hero('슈퍼맨', 10);
+  final cleric = Cleric('성직자',50, 10);
 
 }
 

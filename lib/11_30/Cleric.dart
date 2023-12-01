@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class Cleric{
+class Cleric {
   String name;
   int hp;
   final maxHp = 50;
@@ -9,21 +9,21 @@ class Cleric{
 
   Cleric(this.name, this.hp, this.mp);
 
-
-  void selfAid(){
-    if (mp<5){
+  void selfAid() {
+    if (mp < 5) {
       print('MP가 부족합니다. 남은 MP: $mp');
-    }else{
+      return;
+    } else {
       mp -= 5;
       hp = maxHp;
       print('$name 가 HP를 회복하였다. 남은 MP: $mp');
     }
   }
 
-  pray(int prayTime){
+  pray(int prayTime) {
     int refillMp = Random().nextInt(3) + prayTime;
-    if (mp + refillMp >= maxMp){
-      var refillMp = maxMp - mp;
+    if (mp + refillMp >= maxMp) {
+      final int refillMp = maxMp - mp;
       mp += refillMp;
       print("$refillMp 회복하여 모든 MP가 회복되었다. MP: $mp");
     } else {
@@ -33,5 +33,4 @@ class Cleric{
 
     return refillMp;
   }
-
 }

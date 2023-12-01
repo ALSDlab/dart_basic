@@ -1,8 +1,8 @@
 import 'dart:math';
 
 class Cleric {
-  static final maxHp = 50;
-  static final maxMp = 10;
+  final maxHp = 50;
+  final maxMp = 10;
   String name;
   int hp;
   int mp;
@@ -24,12 +24,11 @@ class Cleric {
     int refillMp = Random().nextInt(3) + prayTime;
     if (mp + refillMp >= maxMp) {
       final int refillMp = maxMp - mp;
-      mp += refillMp;
       print("$refillMp 회복하여 모든 MP가 회복되었다. MP: $mp");
     } else {
-      mp += refillMp;
       print("$name 가 $refillMp 의 MP를 회복하였다.");
     }
+    mp += refillMp;
 
     return refillMp;
   }
@@ -37,6 +36,6 @@ class Cleric {
 
 void main() {
   final cleric1 = Cleric('아서스',hp: 50, mp: 10);
-  // final cleric2 = Cleric();
   final cleric3 = Cleric('aaaa', hp: 30);
+  // final cleric2 = Cleric();
 }

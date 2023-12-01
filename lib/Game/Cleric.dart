@@ -1,13 +1,13 @@
 import 'dart:math';
 
 class Cleric {
+  static final maxHp = 50;
+  static final maxMp = 10;
   String name;
   int hp;
-  final maxHp;
   int mp;
-  final maxMp;
 
-  Cleric(this.name, this.hp, this.mp,{this.maxHp = 50, this.maxMp = 10});
+  Cleric(this.name, {this.hp = 50, this.mp = 10});
 
   void selfAid() {
     if (mp < 5) {
@@ -33,4 +33,10 @@ class Cleric {
 
     return refillMp;
   }
+}
+
+void main() {
+  final cleric1 = Cleric('아서스',hp: 50, mp: 10);
+  // final cleric2 = Cleric();
+  final cleric3 = Cleric('aaaa', hp: 30);
 }

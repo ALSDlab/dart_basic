@@ -10,12 +10,12 @@ void main() {
 
   int mapX = mapMove[0];
   int mapY = mapMove[1];
-  int moveCnt = mapMove[2];
+  int whereToGo = mapMove[2];
   int resultX = firstXY[0];
   int resultY = firstXY[1];
-  for (int i = 0; i < moveCnt; i++){
-    String? moveCnt = stdin.readLineSync();
-    List<String> move = moveCnt!.split(' ');
+  for (int i = 0; i < whereToGo; i++){
+    String? directionAndCnt = stdin.readLineSync();
+    List<String> move = directionAndCnt!.split(' ');
     int moveCount = int.parse(move[1]);
     switch(move[0]){
       case 'U':

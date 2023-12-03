@@ -7,7 +7,7 @@ class Hero {
 
   Hero();
 
-  void introduce() {
+  void condition() {
     print('Hero - Health: $health, Attack: $power, Defense: $defense');
   }
 
@@ -25,7 +25,7 @@ class Slime {
 
   Slime();
 
-  void introduce() {
+  void condition() {
     print('Slime - Health: $health, Attack: $power, Defense: $defense');
   }
 
@@ -43,8 +43,8 @@ void main() {
   print('Hero VS Slime\n');
 
   while (Slime.health > 0) {
-    hero.introduce();
-    slime.introduce();
+    hero.condition();
+    slime.condition();
     slime.attack();
     hero.attack();
     print('\n');

@@ -6,8 +6,7 @@ void main(){
 
   print('등차수열 시작');
   for (int i=1;i<=endNum;i++){
-    result += startNum.toString();
-    result += ' ';
+    result += '$startNum ';
     startNum += jumpNum;
   }
   print(result);

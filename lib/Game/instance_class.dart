@@ -11,7 +11,7 @@ void main(){
   final hero1 = Hero(name: '슈퍼맨', hp: 100);
   final hero2 = Hero(name: '배트맨', hp: 100);
   final cleric = Cleric('성직자', hp: 50, mp: 10);
-  final wand = Wand(name: '숏스태프', power: 30.0);
+  final wand = Wand(name: '완드', power: 30.0);
   final wizard = Wizard(wand, hp: 50, name: '마법사', mp: 20);
 
   hero1.sword = sword;

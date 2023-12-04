@@ -23,4 +23,8 @@ void main() {
   for (final person in people.entries) {
     print('${person.key}의 나이는 ${person.value}살');
   }
+
+  people.entries.forEach((person) {
+    print('${person.key}의 나이는 ${person.value}살');
+  });
 }

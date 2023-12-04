@@ -6,15 +6,21 @@
 
 class Person {
   String name;
+  int age;
 
-  Person({required this.name});
+  Person({required this.name, required this.age});
 }
 
-void main () {
-  final person1 = Person(name: '홍길동');
-  final person2 = Person(name: '한석봉');
+void main() {
+  final person1 = Person(name: '홍길동', age: 20);
+  final person2 = Person(name: '한석봉', age: 25);
 
-  List<String> people = [person1.name, person2.name];
+  Map<String, int> people = {
+    person1.name: person1.age,
+    person2.name: person2.age
+  };
 
-  print(people);
+  for (final person in people.entries) {
+    print('${person.key}의 나이는 ${person.value}살');
+  }
 }

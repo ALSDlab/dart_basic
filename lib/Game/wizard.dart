@@ -2,24 +2,22 @@ import 'hero.dart';
 import 'wand.dart';
 
 class Wizard {
-  final int _hp;
   final String _name;
+  final int _hp;
   final int _mp;
   final Wand wand;
 
   Wizard(
     this.wand, {
-    required int hp,
     required String name,
+    required int hp,
     required int mp,
-  })  : _hp = hp,
-        _name = name,
+  })  : _name = name,
+        _hp = hp,
         _mp = mp;
 
-  int get hp => _hp;
-
   String get name => _name;
-
+  int get hp => _hp;
   int get mp => _mp;
 
   set hp(int value) {

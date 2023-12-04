@@ -1,6 +1,9 @@
+import 'package:untitled/11_28/variables2.dart';
+
 import 'Cleric.dart';
 import 'hero.dart';
 import 'sword.dart';
+import 'wand.dart';
 import 'wizard.dart';
 
 void main(){
@@ -8,8 +11,8 @@ void main(){
   final hero1 = Hero(name: '슈퍼맨', hp: 100);
   final hero2 = Hero(name: '배트맨', hp: 100);
   final cleric = Cleric('성직자', hp: 50, mp: 10);
-
-  final wizard = Wizard(name: '마법사', hp: 50);
+  final wand = Wand(name: '숏스태프', power: 30.0);
+  final wizard = Wizard(wand, hp: 50, name: '마법사', mp: 20);
 
   hero1.sword = sword;
 

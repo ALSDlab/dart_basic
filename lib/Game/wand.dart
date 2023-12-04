@@ -24,7 +24,5 @@ class Wand {
       throw Exception('마력이 너무 큽니다.');
     }
   }
-
-
 }
 

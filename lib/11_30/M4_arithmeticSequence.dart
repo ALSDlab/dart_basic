@@ -9,6 +9,6 @@ void main(){
     result += '$startNum ';
     startNum += jumpNum;
   }
-  print(result);
+  print(result.trim());
   print('등차수열 끝');
 }

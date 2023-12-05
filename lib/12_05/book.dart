@@ -2,6 +2,9 @@ import 'tangibleAsset.dart';
 
 class Book extends TangibleAsset {
   String isbn;
+  @override
+  int size;
 
-  Book(super.name, super.price, super.color, super.weight, this.isbn);
+  Book(
+      super.name, super.price, super.color, super.weight, this.size, this.isbn);
 }

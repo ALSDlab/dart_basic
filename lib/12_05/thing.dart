@@ -1,11 +1,14 @@
 abstract interface class Thing {
-  final double _weight;
+  final int _size;
 
-  Thing({required double weight}) : _weight = weight;
+  Thing({required int size}) : _size = size;
 
-  double get weight => _weight;
+  int get size => _size;
 
-  set weight(double value) {
-    weight = value;
+  set size(int value) {
+    size = value;
   }
+
+  double weighting(int size);
 }
+

@@ -1,10 +1,18 @@
 import 'asset.dart';
+import 'thing.dart';
 
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing {
 
   String color;
 
-  TangibleAsset(super.name, super.price, this.color);
+  @override
+  double weight;
+
+  TangibleAsset(super.name, super.price, this.color, this.weight);
+
+
+
+
 }
 
 

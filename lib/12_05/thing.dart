@@ -1,11 +1,11 @@
-abstract interface class Thing{
-  double _weight;
+abstract interface class Thing {
+  final double _weight;
 
-  Thing(this._weight);
+  Thing({required double weight}) : _weight = weight;
 
   double get weight => _weight;
 
   set weight(double value) {
-    _weight = value;
+    weight = value;
   }
 }

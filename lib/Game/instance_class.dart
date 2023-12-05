@@ -1,7 +1,7 @@
-import 'package:untitled/11_28/variables2.dart';
-import 'package:untitled/Game/PoisonSlime.dart';
+import 'package:untitled/11_28/variables_2.dart';
+import 'package:untitled/Game/poisonSlime.dart';
 
-import 'Cleric.dart';
+import 'cleric.dart';
 import 'hero.dart';
 import 'sword.dart';
 import 'wand.dart';

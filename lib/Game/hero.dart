@@ -10,6 +10,13 @@ class Hero {
 //생성자 생략
   Hero({this.name = '홍길동', required int hp, this.sword}) : _hp = hp;
 
+
+  int get hp => _hp;
+
+  set hp(int value) {
+    _hp = value;
+  }
+
   void bye() {
     print('빠이');
   }

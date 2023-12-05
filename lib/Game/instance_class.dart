@@ -1,4 +1,5 @@
 import 'package:untitled/11_28/variables2.dart';
+import 'package:untitled/Game/PoisonSlime.dart';
 
 import 'Cleric.dart';
 import 'hero.dart';
@@ -16,16 +17,21 @@ void main() {
 
   hero1.sword = sword;
 
-  wizard.heal(hero1);
-  wizard.heal(hero2);
+  // wizard.heal(hero1);
+  // wizard.heal(hero2);
+  //
+  // cleric.selfAid();
+  // cleric.selfAid();
+  // cleric.selfAid();
+  // cleric.pray(2);
+  // cleric.pray(3);
+  // cleric.pray(1);
+  // cleric.pray(3);
 
-  cleric.selfAid();
-  cleric.selfAid();
-  cleric.selfAid();
-  cleric.pray(2);
-  cleric.pray(3);
-  cleric.pray(1);
-  cleric.pray(3);
+  final poisonSlime = PoisonSlime('Poison');
+  poisonSlime.attack(hero1);
+
+
 }
 
 // class Car{

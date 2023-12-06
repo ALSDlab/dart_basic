@@ -45,7 +45,7 @@ void main(){
   print("colors: $colors");
   
   
-  Runes input = new Runes('\u{1f600}');
+  Runes input = Runes('\u{1f600}');
   String smiley = String.fromCharCodes(input);
   print("\nRunes");
   print("smiley: $smiley");

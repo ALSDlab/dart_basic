@@ -33,7 +33,7 @@ void main() {
     print('${person.key}의 나이는 ${person.value}살');
   }
   // forEach 사용
-  people.entries.forEach((person) {
+  for (var person in people.entries) {
     print('${person.key}의 나이는 ${person.value}살');
-  });
+  }
 }

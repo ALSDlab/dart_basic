@@ -1,4 +1,3 @@
-import 'dart:io';
 
 class Hero {
   static int health = 100;

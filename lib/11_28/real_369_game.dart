@@ -28,7 +28,7 @@ void main(){
       } else if (clapNum==0){
         print("Player $playerNum: $number");
       } else {
-      print("Player $playerNum: " + "짝!" * clapNum);
+      print("Player $playerNum: ${"짝!" * clapNum}");
 
     }
     number++;

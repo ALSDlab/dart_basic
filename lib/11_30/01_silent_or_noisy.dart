@@ -7,6 +7,7 @@ void main() {
       int n = int.parse(s);
       return n;
     }
+    return null;
   }
 
   String? round(int x, int y, int a, int b, int R){

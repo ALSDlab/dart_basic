@@ -5,11 +5,7 @@ void main() {
 
   String age = '125';
 
-  if(name != null){
-    print(name.length);
-  } else{
-    print('it is null');
-  }
+  print('it is null');
   print(name?.length);
 
 

@@ -1,4 +1,3 @@
-import 'package:untitled/11_28/variables_2.dart';
 import 'package:untitled/Game/poisonSlime.dart';
 
 import 'cleric.dart';

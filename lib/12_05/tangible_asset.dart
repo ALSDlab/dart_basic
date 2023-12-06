@@ -3,14 +3,22 @@ import 'thing.dart';
 
 abstract class TangibleAsset extends Asset implements Thing {
   String color;
-  double weight;
+  double _weight;
 
   @override
-  weighting(int size) {
-    return weight;
+  double get weight => _weight;
+
+  @override
+  set weight(double value) {
+    _weight = value;
   }
 
-  TangibleAsset(super.name, super.price, this.color, this.weight);
+  TangibleAsset({
+    required super.name,
+    required super.price,
+    required this.color,
+    required double weight,
+  }): _weight = weight;
 }
 
 // 12-2 가: Asset, 나: IntangibleAsset, 다: Patent

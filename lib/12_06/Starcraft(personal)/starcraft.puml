@@ -1,0 +1,79 @@
+@startuml Starcraft
+abstract class Race {
+  String _name;
+  int _hp;
+
+}
+
+ interface  Structure {}
+
+ interface  Movable {
+  get name => null;
+}
+
+ interface  GroupUnits implements Movable {
+  void grouping(Movable unit);
+}
+
+ interface  Bionic {}
+
+ interface  Mechanic {}
+
+abstract class BionicUnit implements Bionic, Movable {}
+
+abstract class MechanicUnit implements Mechanic, Movable {}
+
+abstract class Terran extends Race implements GroupUnits {
+
+  static List<Movable> units = [];
+
+}
+
+class Marine extends Terran implements BionicUnit {
+}
+
+class Medic extends Terran implements BionicUnit {
+
+  void heal(BionicUnit bionicUnit) {}
+}
+
+class Tank extends Terran implements MechanicUnit {
+}
+
+class Vulture extends Terran implements MechanicUnit {
+}
+
+class SCV extends Terran implements BionicUnit, MechanicUnit {
+
+  void repair(MechanicUnit mechanicUnit) {}
+
+  void mining() {}
+}
+
+abstract class Zerg extends Race implements GroupUnits {
+  void recover();
+
+  static List<Movable> units = [];
+
+}
+
+class Drone extends Zerg implements BionicUnit {
+}
+
+class Hachery extends Zerg implements Structure {
+}
+
+abstract class Protoss extends Race implements GroupUnits {
+
+  void recoverShield();
+
+  static List<Movable> units = [];
+}
+
+class Zealot extends Protoss implements BionicUnit {
+}
+
+class Dragun extends Protoss implements MechanicUnit {
+}
+
+@enduml

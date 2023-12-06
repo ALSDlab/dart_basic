@@ -36,14 +36,14 @@ class B extends Y {
 
 void main() {
   X obj = A();
-  obj.a(); //1. 정답
+  obj.a(); // 1. a() 메소드 호출됨
 
   Y y1 = A();
   Y y2 = B();
-  y1.a(); // Aa 출력
-  y2.a(); // Ba 출력
+  y1.a(); // 2. Aa 출력
+  y2.a(); // 2. Ba 출력
 
-  List<Y> values = [y1, y2];
+  List<Y> values = [y1, y2];   // 3. Y 타입을 사용
   for (Y val in values) {
     val.b();
   }

@@ -34,18 +34,17 @@ class B extends Y {
   }
 }
 
-void main(){
+void main() {
   X obj = A();
-  obj.a();  //1. 정답
+  obj.a(); //1. 정답
 
   Y y1 = A();
   Y y2 = B();
-  y1.a();    // Aa 출력
-  y2.a();    // Ba 출력
+  y1.a(); // Aa 출력
+  y2.a(); // Ba 출력
 
   List<Y> values = [y1, y2];
-  for(Y val in values){
+  for (Y val in values) {
     val.b();
   }
-
 }

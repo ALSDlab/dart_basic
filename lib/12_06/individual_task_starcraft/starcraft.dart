@@ -25,9 +25,10 @@ abstract interface class Structure {}
 
 abstract interface class Movable {
   get name => null;
+  void move();
 }
 
-abstract interface class GroupUnits implements Movable {
+abstract interface class GroupUnits {
   void grouping(Movable unit);
 }
 
@@ -35,9 +36,15 @@ abstract interface class Bionic {}
 
 abstract interface class Mechanic {}
 
-abstract class BionicUnit implements Bionic, Movable {}
+abstract class BionicUnit implements Bionic, Movable {
+  @override
+  void move() {}
+}
 
-abstract class MechanicUnit implements Mechanic, Movable {}
+abstract class MechanicUnit implements Mechanic, Movable {
+  @override
+  void move() {}
+}
 
 abstract class Terran extends Race implements GroupUnits {
   Terran({required super.name, required super.hp});
@@ -61,28 +68,38 @@ abstract class Terran extends Race implements GroupUnits {
 
 class Marine extends Terran implements BionicUnit {
   Marine({required super.name, required super.hp});
+
+  @override
+  void move() {}
 }
 
 class Medic extends Terran implements BionicUnit {
   Medic({required super.name, required super.hp});
 
   void heal(BionicUnit bionicUnit) {}
+  @override
+  void move() {}
 }
 
 class Tank extends Terran implements MechanicUnit {
   Tank({required super.name, required super.hp});
+  @override
+  void move() {}
 }
 
 class Vulture extends Terran implements MechanicUnit {
   Vulture({required super.name, required super.hp});
+  @override
+  void move() {}
 }
 
 class SCV extends Terran implements BionicUnit, MechanicUnit {
   SCV({required super.name, required super.hp});
 
   void repair(MechanicUnit mechanicUnit) {}
-
   void mining() {}
+  @override
+  void move() {}
 }
 
 abstract class Zerg extends Race implements GroupUnits {
@@ -112,6 +129,8 @@ class Drone extends Zerg implements BionicUnit {
 
   @override
   void recover() {}
+  @override
+  void move() {}
 }
 
 class Hachery extends Zerg implements Structure {
@@ -148,6 +167,8 @@ class Zealot extends Protoss implements BionicUnit {
 
   @override
   void recoverShield() {}
+  @override
+  void move() {}
 }
 
 class Dragun extends Protoss implements MechanicUnit {
@@ -155,6 +176,8 @@ class Dragun extends Protoss implements MechanicUnit {
 
   @override
   void recoverShield() {}
+  @override
+  void move() {}
 }
 
 void main() {
@@ -170,7 +193,7 @@ void main() {
   marine.grouping(marine);
   tank.grouping(tank);
   zealot.grouping(zealot);
-  hachery.grouping(hachery);
+  // hachery.grouping(hachery);
   // medic.heal(drone);
   // medic.heal(hachery);
 }

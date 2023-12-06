@@ -9,9 +9,10 @@ abstract class Race {
 
  interface  Movable {
   get name => null;
+  void move();
 }
 
- interface  GroupUnits implements Movable {
+ interface  GroupUnits {
   void grouping(Movable unit);
 }
 
@@ -19,38 +20,55 @@ abstract class Race {
 
  interface  Mechanic {}
 
-abstract class BionicUnit implements Bionic, Movable {}
+abstract class BionicUnit implements Bionic, Movable {
 
-abstract class MechanicUnit implements Mechanic, Movable {}
+}
+
+abstract class MechanicUnit implements Mechanic, Movable {
+
+}
 
 abstract class Terran extends Race implements GroupUnits {
+  Terran({required super.name, required super.hp});
 
   static List<Movable> units = [];
 
 }
 
 class Marine extends Terran implements BionicUnit {
+  Marine({required super.name, required super.hp});
+
+
 }
 
 class Medic extends Terran implements BionicUnit {
+  Medic({required super.name, required super.hp});
 
   void heal(BionicUnit bionicUnit) {}
+
 }
 
 class Tank extends Terran implements MechanicUnit {
+  Tank({required super.name, required super.hp});
+
 }
 
 class Vulture extends Terran implements MechanicUnit {
+  Vulture({required super.name, required super.hp});
+
 }
 
 class SCV extends Terran implements BionicUnit, MechanicUnit {
+  SCV({required super.name, required super.hp});
 
   void repair(MechanicUnit mechanicUnit) {}
-
   void mining() {}
+
 }
 
 abstract class Zerg extends Race implements GroupUnits {
+  Zerg({required super.name, required super.hp});
+
   void recover();
 
   static List<Movable> units = [];
@@ -58,22 +76,35 @@ abstract class Zerg extends Race implements GroupUnits {
 }
 
 class Drone extends Zerg implements BionicUnit {
+  Drone({required super.name, required super.hp});
+
+
 }
 
 class Hachery extends Zerg implements Structure {
+  Hachery({required super.name, required super.hp});
+
+
 }
 
 abstract class Protoss extends Race implements GroupUnits {
+  Protoss({required super.name, required super.hp});
 
   void recoverShield();
 
   static List<Movable> units = [];
+
 }
 
 class Zealot extends Protoss implements BionicUnit {
+  Zealot({required super.name, required super.hp});
+
 }
 
 class Dragun extends Protoss implements MechanicUnit {
+  Dragun({required super.name, required super.hp});
+
 }
+
 
 @enduml

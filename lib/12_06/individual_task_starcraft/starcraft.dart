@@ -21,8 +21,6 @@ abstract class Race {
   }
 }
 
-abstract interface class Structure {}
-
 abstract interface class Movable {
   get name => null;
   void move();
@@ -35,6 +33,10 @@ abstract interface class GroupUnits {
 abstract interface class Bionic {}
 
 abstract interface class Mechanic {}
+
+abstract interface class Structure {}
+
+abstract interface class Repairable {}
 
 abstract class BionicUnit implements Bionic, Movable {
   @override
@@ -81,22 +83,24 @@ class Medic extends Terran implements BionicUnit {
   void move() {}
 }
 
-class Tank extends Terran implements MechanicUnit {
+class Tank extends Terran implements MechanicUnit, Repairable {
   Tank({required super.name, required super.hp});
   @override
   void move() {}
 }
 
-class Vulture extends Terran implements MechanicUnit {
+class Vulture extends Terran implements MechanicUnit, Repairable {
   Vulture({required super.name, required super.hp});
   @override
   void move() {}
 }
 
-class SCV extends Terran implements BionicUnit, MechanicUnit {
+class SCV extends Terran implements BionicUnit, MechanicUnit, Repairable {
   SCV({required super.name, required super.hp});
 
-  void repair(MechanicUnit mechanicUnit) {}
+  void repair(Repairable repairable) {
+    
+  }
   void mining() {}
   @override
   void move() {}
@@ -185,6 +189,7 @@ void main() {
   final marine = Marine(name: '마린', hp: 75);
   final tank = Tank(name: '시즈탱크', hp: 150);
   final zealot = Zealot(name: '질럿', hp: 75);
+  final dragun = Dragun(name: '드라군', hp: 120);
   final medic = Medic(name: '메딕', hp: 50);
   final drone = Drone(name: '드론', hp: 40);
   final hachery = Hachery(name: '해처리', hp: 1000);
@@ -193,6 +198,7 @@ void main() {
   marine.grouping(marine);
   tank.grouping(tank);
   zealot.grouping(zealot);
+  // scv.repair(dragun);
   // hachery.grouping(hachery);
   // medic.heal(drone);
   // medic.heal(hachery);

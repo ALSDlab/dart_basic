@@ -2,8 +2,8 @@ class Word {
   String word = '';
 
   bool isVowel(int i) {
-    final vowels = ['a', 'e', 'i', 'o', 'u'];
-    for (var vowel in vowels) {
+    final vowels = <String>['a', 'e', 'i', 'o', 'u'];
+    for (String vowel in vowels) {
       if (word.substring(i, i + 1).toLowerCase() == vowel) {
         return true;
       }
@@ -12,8 +12,8 @@ class Word {
   }
 
   bool isConsonant(int i) {
-    final vowels = ['a', 'e', 'i', 'o', 'u'];
-    for (var vowel in vowels) {
+    final vowels = <String>['a', 'e', 'i', 'o', 'u'];
+    for (String vowel in vowels) {
       if (word.substring(i, i + 1).toLowerCase() == vowel) {
         return false;
       }

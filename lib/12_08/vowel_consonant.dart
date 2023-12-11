@@ -12,13 +12,7 @@ class Word {
   }
 
   bool isConsonant(int i) {
-    final vowels = <String>['a', 'e', 'i', 'o', 'u'];
-    for (String vowel in vowels) {
-      if (word.substring(i, i + 1).toLowerCase() == vowel) {
-        return false;
-      }
-    }
-    return true;
+    return !isVowel(i);
   }
 }
 

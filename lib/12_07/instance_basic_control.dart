@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Book implements Comparable<Book> {
   String title;
   DateTime publishDate = DateTime.now();
@@ -15,7 +17,8 @@ class Book implements Comparable<Book> {
       other is Book &&
           runtimeType == other.runtimeType &&
           title == other.title &&
-          publishDate == other.publishDate;
+          DateFormat('yyyy-MM-dd').format(publishDate) ==
+              DateFormat('yyyy-MM-dd').format(other.publishDate);
 
   @override
   int get hashCode => title.hashCode ^ publishDate.hashCode;
@@ -47,22 +50,22 @@ class Book implements Comparable<Book> {
 void main() {
   final Book book1 = Book(
     title: '오준석생존코딩',
-    publishDate: DateTime.utc(2023, 12, 07),
+    publishDate: DateTime(2023, 12, 07),
     comment: 'Bestseller1',
   );
   final Book book2 = Book(
     title: '오준석생존코딩',
-    publishDate: DateTime.utc(2023, 12, 07),
+    publishDate: DateTime(2023, 12, 07),
     comment: '',
   );
   final Book book3 = Book(
     title: '오름캠프',
-    publishDate: DateTime.utc(2023, 05, 01),
+    publishDate: DateTime(2023, 05, 01),
     comment: 'Bestseller2',
   );
   final Book book4 = Book(
     title: '모두의연구소',
-    publishDate: DateTime.utc(2023, 01, 01),
+    publishDate: DateTime(2023, 01, 01),
     comment: 'Bestseller3',
   );
 
@@ -81,9 +84,10 @@ void main() {
 
   print(books2); // 출간일이 빠른 순서대로 출력
 
-  final book5 = book4;              // book5 = book4 와 비교
+  final book5 = book4; // book5 = book4 와 비교
   final book6 = book4.copyWith();
-  final book7 = book4.copyWith(title: '생존코딩2');   // Deep copy (book4를 book7로 title 변경하고 딥 복사)
+  final book7 = book4.copyWith(
+      title: '생존코딩2'); // Deep copy (book4를 book7로 title 변경하고 딥 복사)
 
   print(book1.hashCode);
   print(book2.hashCode);
@@ -99,6 +103,4 @@ void main() {
   print(book5);
   print(book6);
   print(book7);
-
-
 }

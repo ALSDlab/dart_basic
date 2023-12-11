@@ -67,34 +67,49 @@ class Department {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'leader': leader,
+      'leader': leader.toJson(),
     };
   }
 
   factory Department.fromJson(Map<String, dynamic> map) {
     return Department(
       name: map['name'],
-      leader: map['leader'],
+      leader: Employee.fromJson(map['leader']),
     );
   }
 }
 
-void writeToFile(final source, final target) {
-  target.writeAsStringSync(jsonEncode(source.toJson()));
+// 파일 쓰기
+void writeFileAsync(filePath, source) {
+  try {
+    filePath.writeAsStringSync(jsonEncode(source.toJson()));
+    print('파일이 성공적으로 쓰여졌습니다.');
+  } catch (e) {
+    print('파일을 쓰는 도중 오류 발생: $e');
+  }
 }
 
 void main() {
-  // 인스턴스 생성 및 직렬화.
-  Employee worker = Employee.fromJson({'name': '홍길동', 'age': 41});
+  // 인스턴스 생성
+  Employee worker = Employee(name: '홍길동', age: 41);
+  Department leader = Department(name: '총무부', leader: worker);
 
   // target 파일(company.txt)
   File file = File('lib/12_11/company.txt');
 
-  // 파일에 저장하기
-  writeToFile(worker, file);
+  // 직렬화 및 파일에 저장하기
+  writeFileAsync(file, worker);
 
   // 파일 읽기
-  String employeeJson = file.readAsStringSync();
-  Employee who = Employee.fromJson(jsonDecode(employeeJson));
+  String workerJson = file.readAsStringSync();
+  Employee who = Employee.fromJson(jsonDecode(workerJson));
   print(who.toJson().toString());
+
+  // 직렬화 및 파일에 저장하기
+  writeFileAsync(file, leader);
+
+  // 파일 읽기
+  String leaderJson = file.readAsStringSync();
+  Department whoIsLeader = Department.fromJson(jsonDecode(leaderJson));
+  print(whoIsLeader.toJson().toString());
 }

@@ -5,14 +5,10 @@ void main() {
   final numString = '10.5';
 
   try {
-    int num = numStringToNum(numString);
+    int num = int.parse(numString);
     print(num);
   } on FormatException {
-    int num = 0;
-    print(num);
+    int defaultNum = 0;
+    print(defaultNum);
   }
-}
-
-int numStringToNum(String numString) {
-  return int.parse(numString);
 }

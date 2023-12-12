@@ -10,6 +10,14 @@ void copy(String source, String target) {
   copyFile.writeAsStringSync(text);
 }
 
+// 읽어서 쓴다.
+void copy2(String source, String target){
+  File(target).writeAsStringSync(File(source).readAsStringSync());
+}
+
+// sexy code
+void copy3(String source, String target)=> File(source).copySync(target);
+
 void main() {
   final sourceFile = 'test_file.txt';
   final targetFile = 'test_target.txt';

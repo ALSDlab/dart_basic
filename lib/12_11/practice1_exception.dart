@@ -6,6 +6,7 @@ void main() {
   print(parse(numString));
 }
 
+// solution1
 int parse(String string) {
   int num;
   try {
@@ -15,3 +16,6 @@ int parse(String string) {
   }
   return num;
 }
+
+// solution2 - tryParse
+// print(int.tryParse(numString) ?? 0);

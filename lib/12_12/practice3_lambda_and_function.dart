@@ -7,6 +7,11 @@ class Trader {
   String city;
 
   Trader(this.name, this.city);
+
+  @override
+  String toString() {
+    return 'Trader{name: $name, city: $city}';
+  }
 }
 
 class Transaction {
@@ -15,6 +20,11 @@ class Transaction {
   int value;
 
   Transaction(this.trader, this.year, this.value);
+
+  @override
+  String toString() {
+    return 'Transaction{trader: $trader, year: $year, value: $value}\n';
+  }
 }
 
 final transactions = [
@@ -57,8 +67,6 @@ void main() {
   // 6. 케임브리지에 거주하는 거래자의 모든 트랙잭션 값을 출력
   print(transactions
       .where((e) => e.trader.city == 'Cambridge')
-      .map((e) =>
-          ['[${e.trader.name}, ${e.trader.city}], ${e.year}, ${e.value}'])
       .toList());
 
   // 7. 전체 트랜잭션중 최대값은얼마인가?

@@ -37,5 +37,5 @@ void main() async {
 
   String fileData = await readFileAsync(file);
   String newText = findWord(fileData);
-  await writeFileAsync(newText, copyFile);
+  writeFileAsync(newText, copyFile);
 }

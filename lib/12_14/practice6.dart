@@ -23,7 +23,7 @@ Future<bool> validateImage(String url) async {
     print('유효하지 않은 URL 입니다.');
     return false;
   }
-  if (response.statusCode != 200) return false;
+  if (response.statusCode != HttpStatus.ok) return false;
   return true;
 }
 

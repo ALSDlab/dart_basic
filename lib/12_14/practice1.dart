@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'practice1_movie_infos.dart';
 import 'package:http/http.dart' as http;
 
-
 // 1. 영화정보를 가져와서 모델에 담고 json 형태로 출력하기
 
 Future<MovieInfos> getMovies(int page) async {
@@ -12,9 +11,7 @@ Future<MovieInfos> getMovies(int page) async {
   return MovieInfos.fromJson(jsonDecode(response.body));
 }
 
-
-void main()async{
-
+void main() async {
   final MovieInfos movies = await getMovies(1);
   print(movies.toJson());
 }

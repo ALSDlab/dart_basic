@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:untitled/12_18/practice.dart';
+import 'package:untitled/12_18/practice2_3_4.dart';
 
 void main() {
   test('함수가 잘 작동하고 있다', () {

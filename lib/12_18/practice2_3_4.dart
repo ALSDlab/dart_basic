@@ -10,7 +10,7 @@ class Processing {
 
 // Unit Test - 연습문제 3. 최댓값 찾기 함수
   int findMax(List<int> numList) {
-    numList.sort();
+    numList.sort((a, b) => a.compareTo(b) * -1);
     return numList[0];
   }
 
